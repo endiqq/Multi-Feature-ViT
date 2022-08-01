@@ -38,4 +38,8 @@ MF-ViT CA  | 100 | 0.95  | 0.95 | 0.95 | 95.03
 - Finetune MoCo-COVID-FT:
   - python MoCo-CXR/moco_pretraining/moco/main_vit_covid_test_val_single_img_type_5draws_rev_v2loss_v3structure_vitsmall.py -a vit_small --lr 3 --batch-size 16 --epochs 90 --exp-name  --pretrained  --maintain-ratio --rotate --aug-setting chexpert --train_data data --optimizer sgd --cos --semi-supervised (--pretraind = pretrained weights)
 
+- Finetuen MF-ViT CA
+  - python MoCo-CXR/moco_pretraining/moco/main_vit_covid_test_val_single_img_type_5draws_rev_v2loss_v3structure_latesum_finetunelast.py -a vit_small --batch-size 32 --exp-name --pretrained  --pretrained_enh  --maintain-ratio --rotate --aug-setting chexpert --lr 1.5e-4 --cos --ep 25
+
+
 
