@@ -26,6 +26,9 @@ MF-ViT CA  | 100 | 0.95  | 0.95 | 0.95 | 95.03
 - Dataset and Trained model weights:
   - Download them from [Kaggle](https://www.kaggle.com/endiqq/largest-covid19-dataset?select=covid_metadata.csv). CXR folder are all origianl CXR images and Enh folder are all corresponding enhanced images. 
 
+- Preparation:
+  - Create a folder named MoCo-COVID to save all downloaded files from this repo and files from Kaggle in one folder. 
+
 - Train MoCo-COVID:
   - python MoCo-COVID/moco_pretraining/moco/main_covid_mocov3based_single_img_type_5draws_mocov3structure_mocov2loss_vitsmall.py  -a vit_small -b 16 --optimizer=adamw --lr=1.5e-4 --weight-decay=.1 --epochs=30 --warmup-epochs=4  --stop-grad-conv1 --moco-m-cos --moco-t=.2 --multiprocessing-distributed --world-size 1 --rank 0 --aug-setting chexpert --rotate 10 --exp-name  --train_data data --cos  (train_data: data=original CXR image; Train_Mix=enhanced CXR image)
 
